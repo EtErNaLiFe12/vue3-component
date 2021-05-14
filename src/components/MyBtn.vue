@@ -43,7 +43,7 @@ export default {
   
 </style>-->
 
-<!--MyBtn-2-->
+<!--MyBtn-2
 <template>
   <div class="btn">
     <slot></slot>
@@ -71,4 +71,71 @@ export default {
     color: white;
     cursor: pointer;
   }
-</style>
+</style>-->
+
+<!--MyBtn-3
+
+<template>
+  <div class="btn">
+    <slot></slot>
+  </div>
+  <h1 @dblclick="$emit('heropy', $event)">
+    abc
+  </h1>
+  <input
+    type="text"
+    v-model="msg" />
+</template>
+
+<script>
+export default {
+  emits: [
+    'heropy',
+    'changeMsg'
+  ],
+  data() {
+    return {
+      msg: ''
+    }
+  },
+  watch: {
+    msg() {
+      this.$emit('changeMsg', this.msg)
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .btn {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+  }
+</style>-->
+
+<!--MyBtn-4
+
+<template>
+  <div class="btn">
+    <!-- <slot>Apple</slot> 
+    <slot name="icon"></slot>
+    <slot name="text"></slot>
+  </div>
+</template>
+
+<style scoped>
+  .btn {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+  }
+</style>-->
